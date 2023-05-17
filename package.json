@@ -1,5 +1,6 @@
 {
-  "dependencies": {
-    "nodemon": "^2.0.19"
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1"
   }
 }
