@@ -16,18 +16,7 @@ class LinkedList{
         this.head = newNode
     }
 
-    addLast(data){
-        const newNode = new Node(data)
-        if(!this.head){
-            this.head = newNode
-            return
-        }
-        let current = this.head
-        while(current.next){
-            current = current.next
-        }
-        current.next = newNode
-    }
+   
     size(){
         let count = 0
         if(!this.head){
@@ -44,63 +33,7 @@ class LinkedList{
         }
         return count
     }
-    addAt(index, data){
-        if(index < 0 || index > this.size()){
-            console.error("Index out of bounds")
-            return
-        }
-        const newNode = new Node(data)
-        if(index === 0){
-            newNode.next == this.head
-            this.head === newNode
-            return
-        }
-        let current = this.head
-       for(let i = 0; i < index-1; i++){
-       current == current.next
-       }
-       newNode.next = current.next
-       current.next = newNode
-    }
-    removeTop(){
-        if(!this.head){
-            return
-        }
-        this.head = this.head.next;
-        //If there no place referencing the deleted head it will be removed by JavaScript engine
-    }
-    removeLast(){
-        if(!this.head){
-            return
-        }
-        let current = this.head
-      while(current.next.next) {
-        current = current.next
-      }
-      
-      current.next = null
-    }
-    removeAt(index){
-        if(!this.head){
-            return
-        }
-        if(index === 0){
-            this.head == this.head.next
-             return
-        }
-        if(index < 0 || index > this.size()){
-            console.error("Index out of bounds")
-            return
-        }
-        let current = this.head
-        for(let i=0; i<index-1; i++){
-            current = current.next
-        }
-        if(current.next){
-            current.next = current.next.next
-        }
-        
-    }
+    
     print(){
         let current = this.head;
         while(current){
@@ -191,11 +124,16 @@ sortedLinkedList.addFirst(3);
 sortedLinkedList.addFirst(13);
 sortedLinkedList.addFirst(8);
 sortedLinkedList.addFirst(5);
-sortedLinkedList.addLast(10);
+sortedLinkedList.sort(); 
+sortedLinkedList.print(); 
 
-sortedLinkedList.sort(); // This will sort the linked list
+const sortedLinkedListTwo = new SortLinkedList();
+sortedLinkedListTwo.addFirst(30)
+sortedLinkedListTwo.addFirst(123)
+sortedLinkedListTwo.addFirst(88)
+sortedLinkedListTwo.addFirst(50)
+sortedLinkedListTwo.print();
 
-sortedLinkedList.print(); // This should print the sorted list
 
 
 

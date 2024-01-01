@@ -35,7 +35,7 @@ class LinkedList {
         }
         let stepsToMove = totalSize - n
         let current = this.head
-        for(let i = 0; i <= stepsToMove; i++){
+        for(let i = 0; i <=  stepsToMove; i++){
             current = current.next
         }
         return current.data;  
