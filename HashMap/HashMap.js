@@ -7,6 +7,39 @@
 -Map had forEach method 
 -Look up an item in O(1) time by key
 */
+let m = new Map();
+m.set(10,100)
+m.set(9, true)
+m.set(10, false)
+m.set("Apple","Fruit")
+console.log("m=======>",m)
+console.log(m.get(10));
+console.log(m.get(100));
+console.log(m.size);
+console.log(`*******mmmmmmmmmmmmmmmmmmmm********`);
+for(t of m) {
+  console.log(t)
+}
+for(t of m.keys()) {
+  console.log(t)
+}
+for(t of m) {
+  console.log("t[0]======>",t[0])
+}
+for(t of m.values()) {
+  console.log(t)
+}
+for(t of m) {
+  console.log("t[1]======>",t[1])
+}
+m.delete(10)
+console.log("m after delete=======>",m)
+m.clear()
+console.log("m after clear=======>",m)
+console.log(`*******Above For Loop For m********`);
+
+
+
 class Contact {
   constructor(name, age, phoneNumber) {
     this.name = name;
@@ -20,7 +53,9 @@ contracts.set("Rosy", new Contact("Rosy Stark", 13, "222-222-2221"));
 contracts.set("Gabriel", new Contact("Gabriel Taco", 13, "333-333-3331"));
 console.log(`Each Contract in The Map`);
 contracts.forEach((contact) => console.log(contact));
+console.log(`************************************`);
 contracts.forEach((contact) => console.log(contact.name));
+console.log(`************************************`);
 console.log(contracts);
 contracts.clear();
 console.log("After Clearing");
@@ -46,7 +81,7 @@ contracts1.set(
   new Contact1("Rosy Stark", 13, "222-222-2221", { fn: [1, 2, 3], mn: "JKL" })
 );
 
-console.log(`Each Contract in The Map`);
+console.log(`Each Contract in The Map contracts1`);
 contracts1.forEach((contact) => console.log(contact.parent));
 contracts1.forEach((contact) => console.log(contact.parent.fn));
 console.log(`************************************`);
@@ -83,8 +118,8 @@ for (let key of Keys) {
   key += 1;
   console.log(key);
 }
-console.log(PLanguage.values());
-console.log(PLanguage.entries());
+console.log("PLanguage.values()==========>",PLanguage.values());
+console.log("PLanguage.entries()==========>",PLanguage.entries());
 for (let entry of PLanguage.entries()) {
   console.log(`Key: ${entry[0]} Value: ${entry[1]}`);
 }
