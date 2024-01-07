@@ -47,7 +47,7 @@ console.log(depthFirstTraversalStack(a));
 const depthFirstTraversalRecurssive = (root) => {
     //Based on Recurssive Implementation - Push Right Push Left 
     if (!root) return [];
-    let stack = [root];
+  
     
     return [root.val, ...depthFirstTraversalRecurssive(root.left), ...depthFirstTraversalRecurssive(root.right)]
   };
