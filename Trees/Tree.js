@@ -2,10 +2,6 @@
 //Item (data point, element) stored in non-linear.
 //There are associations between items which is not 1:1.
 
-
-  
-//https://chat.openai.com/share/3717b807-9186-4b70-b7d6-0f79932110bc
-
 class TreeNode {
   constructor(value) {
     this.value = value;
