@@ -108,6 +108,23 @@ class LinkedList{
             current = current.next
         }
     }
+    checkCircular() {
+        if (!this.head) {
+            return;
+          }
+          let count = this.size();
+          let current = this.head;
+
+         do{
+            count--
+            current = current.next
+         }while( current!==this.head && count > 0);  
+
+          if(current!== this.head){
+            return false
+          }
+          return true
+      }
 }
 
 const linkedlist = new LinkedList();
@@ -123,3 +140,4 @@ linkedlist.addAt(1,30)
 linkedlist.removeAt(1)
 console.log("Size =====>",linkedlist.size())
 linkedlist.print()
+console.log(linkedlist.checkCircular())
