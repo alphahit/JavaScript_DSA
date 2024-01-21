@@ -3,7 +3,7 @@ class MinBinaryHeap {
   //Bubble It Up
 
   constructor() {
-    this.values = [12, 15, 20, 30, 40, 50, 60];
+    this.values = [];
   }
   insert(element) {
     this.values.push(element);
@@ -29,9 +29,14 @@ class MinBinaryHeap {
 }
 
 let heap = new MinBinaryHeap();
-heap.insert(55);
-heap.insert(155);
-heap.insert(14);
+heap.insert(41)
+heap.insert(155)
+heap.insert(15)
+heap.insert(18)
+heap.insert(39)
+heap.insert(12)
+heap.insert(55)
+heap.insert(10)
 console.log(heap.values);
 
 //[41,39,33,18,27,12,55]
