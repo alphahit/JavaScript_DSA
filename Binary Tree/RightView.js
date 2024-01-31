@@ -37,20 +37,24 @@ class Node {
   three.left = six;
   four.right = eight;
 
-function leftView(root){
-    if(!root) return null
-    console.log(root.val)
-    if(!root.left) leftView(root.right)
-    return leftView(root.left)
+function rightView(root){
+  if (!root) return [];
+  let result = [];
+  let queue = [root]; 
+  while(queue.length>0){
+    let levelSize = queue.length
+    for(let i = 0; i<levelSize; i++){
+      let currentNode = queue.shift();
+      if(i===levelSize -1){
+        result.push(currentNode.val)
+      }
+      if(currentNode.left) queue.push(currentNode.left)
+      if(currentNode.right) queue.push(currentNode.right)
+    }
+  }
+  return result
 }  
 
-function rightView(root){
-  if(!root) return null
-  console.log(root.val)
-  if(!root.right) rightView(root.left)
-  return rightView(root.right)
-}  
-leftView(a)
-leftView(one)
-rightView(a)
-rightView(one)
+console.log(rightView(a))
+console.log(rightView(one))
+

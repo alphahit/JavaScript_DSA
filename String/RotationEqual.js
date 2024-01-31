@@ -3,7 +3,7 @@ let s2 = "CDAB"
 let s3 = 'ACBD'
 
 
-function strinRotateEquals(a, b) {
+function stringRotateEquals(a, b) {
     if(a.length != b.length) return false
     let arrA = a.split("")
     let arrB = b.split("")

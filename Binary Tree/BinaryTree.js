@@ -12,12 +12,14 @@ const c = new Node("c");
 const d = new Node("d");
 const e = new Node("e");
 const f = new Node("f");
+const g = new Node("g");
 
 a.left = b;
 a.right = c;
 b.left = d;
 b.right = e;
 c.right = f;
+d.right = g;
 
 //Depth First Traversal
 //TC: O(n) SC: O(n)
@@ -55,24 +57,24 @@ const depthFirstTraversalRecurssive = (root) => {
   console.log(depthFirstTraversalRecurssive(a));
 
   const breadthFirstTraversal = (root) => { 
-    //Based on Stack Implementation - Push Right Push Left 
+    
     if (!root) return [];
-    let stack = [root];
+    let queue = [root];
     let result = [];
-    while (stack.length > 0) {
-      let current = stack.shift();
+    while (queue.length > 0) {
+      let current = queue.shift();
       result.push(current.val);
       if (current.left) {
-        stack.push(current.left);
+        queue.push(current.left);
       }
       if (current.right) {
-        stack.push(current.right);
+        queue.push(current.right);
       }
     
     }
     return result;
   };
 
-  console.log(breadthFirstTraversal(a));
+  console.log('3==>',breadthFirstTraversal(a));
 
 
