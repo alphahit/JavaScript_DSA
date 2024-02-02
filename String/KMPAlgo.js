@@ -20,7 +20,7 @@ const bruteForceMatch = (string, substring) => {
     return -1;
 };
 
-//console.log(bruteForceMatch(string, substring))
+console.log(bruteForceMatch(string, substring))
 let substring2 = "abca";
 let substring3 = "abda";
 function buildPrefixTable(s) {
