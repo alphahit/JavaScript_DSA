@@ -22,6 +22,32 @@ function buySell(prices){
 
     return maxDifference
 }
+
+
+function buySellV2(prices) {
+    let i = 0;
+    let j = 1;
+    let maxDiff = 0;
+    while (j < prices.length) {
+        if (prices[i] > prices[j]) {
+            i = j;
+            j++;
+        }
+        if (prices[i] === prices[j]) {
+            j++;
+        } else if (prices[i] < prices[j]) {
+            maxDiff = Math.max(maxDiff, prices[j] - prices[i]);
+            j++;
+        }
+    }
+    return maxDiff + "check max";
+}
+
+
+
+
+
 console.log(buySell(prices))
 console.log(buySell(prices2))
 console.log(buySell(prices3))
+console.log(buySellV2(prices));
