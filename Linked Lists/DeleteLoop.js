@@ -67,3 +67,50 @@ let solution = new Solution();
 console.log(solution.detectLoop(head));
 solution.deleteLoop(head);
 console.log(solution.detectLoop(head));
+
+
+
+
+
+//Check Logic
+
+// class Solution {
+//     //Function to remove a loop in the linked list.
+//     removeLoop(head)
+//     {
+//         let tortoise = head;
+//     let hare = head;
+//     let loopExists = false;
+
+//     while (hare !== null && hare.next !== null) {
+//       tortoise = tortoise.next;
+//       hare = hare.next.next;
+//       if (tortoise === hare) {
+//         loopExists = true;
+//         break;
+//       }
+//     }
+//     if (!loopExists) return 1;
+//     tortoise = head;
+//     let prevHare = null
+//     if(hare === head){
+//         while (hare.next !== head) {
+//             prevHare = hare
+//         hare = hare.next;
+//       }
+     
+//     }else{
+//        while (tortoise !== hare) {
+//       prevHare = hare;
+//       tortoise = tortoise.next;
+//       hare = hare.next;
+//     }
+//     }
+    
+    
+    
+//     prevHare.next = null;
+//     return 1
+//     }
+    
+// }
