@@ -8,7 +8,7 @@ class LinkedList {
     constructor(){
         this.head = null;
     }
-
+    //O(N2)
     addLast(data){
         const newNode = new Node(data)
         if(!this.head){
@@ -45,7 +45,7 @@ class LinkedList {
       
         }
     }
-
+     //O(N)
     addOne(node)
     {
         //ll reverse
