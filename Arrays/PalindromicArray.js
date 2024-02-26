@@ -30,3 +30,20 @@ function isPalindrome(number){
 }
 
 let arr = [111, 222, 333, 444, 555]
+let arr2 = [111, 121, 131, 20]
+
+function checkArrayPalindrome(arr){
+    let flag = 1
+    for(let i =0; i<arr.length; i++) {
+        if(!isPalindrome(arr[i])){
+            flag = 0
+            break
+        }
+    }
+    return flag
+}
+
+
+
+console.log(checkArrayPalindrome(arr))
+console.log(checkArrayPalindrome(arr2))
