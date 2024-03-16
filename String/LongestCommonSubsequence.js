@@ -17,7 +17,18 @@ function compareArray(str1, str2) {
   let arr2 = [];
   stringSubsequence(str1, "", arr1);
   stringSubsequence(str2, "", arr2);
-  console.log(arr1);
-  console.log(arr2);
+  let m = new Map();
+  for (let i = 0; i < arr1.length; i++) {
+    m.set(arr1[i], arr1[i].length);
+  }
+  let maxLength = -Infinity;
+  for (let i = 0; i < arr2.length; i++) {
+    if (m.has(arr2[i])) {
+      if (m.get(arr2[i]) > maxLength) {
+        maxLength = m.get(arr2[i]);
+      }
+    }
+  }
+  return maxLength;
 }
-compareArray(str1, str2);
+console.log(compareArray(str1, str2));
