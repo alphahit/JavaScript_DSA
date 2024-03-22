@@ -35,8 +35,9 @@ two.left = four;
 five.right = seven;
 five.left = six;
 seven.left = eight;
-
-const maxHeight = (root) => {
+let maxSum = -Infinity;
+let maxLen = 0;
+const maxHeight = (root, count = 0) => {
   if (!root) return 0;
 
   return Math.max(maxHeight(root.left), maxHeight(root.right)) + 1;
