@@ -12,7 +12,7 @@ function buildTree(inOrder, preorder, n) {
     if (start > end) return null;
     let node = new Node(preorder[preIndex++]);
     if (start == end) return node;
-    let inIndex = inorder.indexOf(node.value, start);
+    let inIndex = inOrder.indexOf(node.value, start);
     node.left = buildTreeRecursively(start, inIndex - 1);
     node.right = buildTreeRecursively(inIndex + 1, end);
 
