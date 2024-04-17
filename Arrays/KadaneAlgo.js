@@ -26,20 +26,36 @@ function maxSubArray(nums){//TC: O(n^2), SC: O(1)
 
 
 //Kadane's Algo
-function maxSubArrayKadane(nums){//TC: O(n)
-    let sum = 0;
-    let max = nums[0];
+// function maxSubArrayKadane(nums){//TC: O(n)
+//     let sum = 0;
+//     let max = nums[0];
  
    
+//     for(let i=0; i<nums.length; i++){
+//        sum += nums[i]
+//        if(sum > max) {max = sum}
+//        if(sum < 0) {sum=0}
+//     }
+//     return {
+//         sum: max, 
+//        // maxSubArray: nums.slice(startIndex, endIndex+1)
+//     };
+// }
+
+
+function maxSubArrayKadane(nums){
+    let sum = 0;
+    let max = nums[0];
     for(let i=0; i<nums.length; i++){
-       sum += nums[i]
-       if(sum > max) {max = sum}
-       if(sum < 0) {sum=0}
+        sum += nums[i];
+        if(sum > max){
+            max = sum;
+        }
+        if(sum < 0){
+            sum = 0
+        }
     }
-    return {
-        sum: max, 
-       // maxSubArray: nums.slice(startIndex, endIndex+1)
-    };
+    return max;
 }
 console.log(maxSubArrayKadane([-2,1,-3,4,-1,2,1,-5,4]))
 
