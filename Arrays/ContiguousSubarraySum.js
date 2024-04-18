@@ -23,3 +23,5 @@ var checkSubarraySum = function(nums, k) {
      }
      return false;
 };
+
+console.log(checkSubarraySum([23,2,4,6,7],6))
