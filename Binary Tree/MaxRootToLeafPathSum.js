@@ -19,12 +19,16 @@ b.left = d;
 b.right = e;
 c.right = f;
 
-function recursiveMax(root) {
-  if (!root) return -Infinity;
-  if (root.left === null && root.right === null) return root.val;
+function recurssiveMax(root){
+  if(!root) return 0;
+  if(root.left === null && root.right === null){
+    return root.val
+  }
+  let l = recurssiveMax(root.left);
+  let r = recurssiveMax(root.right);
 
-  let l = recursiveMax(root.left);
-  let r = recursiveMax(root.right);
-  return root.val + Math.max(l, r);
+  return root.val + Math.max(l, r)
 }
-console.log(recursiveMax(a));
+
+console.log(recurssiveMax(a))
+console.log(recurssiveMax(b))

@@ -34,7 +34,7 @@ root.left = newNode(2);
 root.right = newNode(3);
 root.left.left = newNode(4);
 root.left.right = newNode(5);
-k = 2;
+k = 3;
 let node = 5;
 let ancestor = kthAncestorDFS(root, node);
 

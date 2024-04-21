@@ -23,25 +23,27 @@ five.right = seven;
 five.left = six;
 seven.left = eight;
 
+
 function maxHeightSum(root) {
   let maxSum = -Infinity;
   let maxLength = 0;
-  if (!root) return 0;
-  function sumLongestPath(root, sum, len) {
-    if (!root) {
-      if (maxLength < len) {
+  if(!root){return 0}
+
+  function longestPathSum(root, sum, len){
+    if(!root){ //Base Case for Recursion
+      if(len > maxLength){
         maxLength = len;
         maxSum = sum;
-      } else if (maxLength === len && maxSum < sum) {
+      }else if(len === maxLength && sum > maxSum){
         maxSum = sum;
       }
-      return;
+      return
     }
-    sumLongestPath(root.left, sum + root.data, len + 1);
-    sumLongestPath(root.right, sum + root.data, len + 1);
+    longestPathSum(root.left, sum + root.data, len + 1);
+    longestPathSum(root.right, sum + root.data, len + 1);
+   
   }
-  sumLongestPath(root, 0, 0);
-  return maxSum;
+  longestPathSum(root, 0, 0)
+  return maxSum
 }
-
 console.log(maxHeightSum(one));
