@@ -1,20 +1,16 @@
-//Absurd Exponential
+//Absurd Exponential (Need To Find Optimal)
 
 function longestRepeatingSubseqRec(str, i, j) {
-  // Base case: If either of the indices has reached the end
   if (i >= str.length || j >= str.length) return 0;
 
   if (str[i] === str[j] && i !== j) {
-    // Characters match and are not at the same index, move both indices
     return 1 + longestRepeatingSubseqRec(str, i + 1, j + 1);
   } else {
-    // Skip one character either from i or j and take the max
     return Math.max(longestRepeatingSubseqRec(str, i + 1, j), longestRepeatingSubseqRec(str, i, j + 1));
   }
 }
 
 function longestRepeatingSubsequence(str) {
-  // Start from the beginning of the string for both indices
   return longestRepeatingSubseqRec(str, 0, 0);
 }
 
