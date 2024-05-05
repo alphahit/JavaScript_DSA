@@ -29,7 +29,10 @@ const company = {
 };
 
 
+
 function deepClone(obj, seen = new Map()) {
+
+    //For Simple Primitvie Data type
     if (obj === null || typeof obj !== 'object') {
         return obj;
     }
