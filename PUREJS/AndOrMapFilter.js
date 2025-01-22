@@ -21,41 +21,6 @@ let name2 = age2> 10?"Prateek2":"Priyadarshi2";
 console.log(name2);
 
 
-//Object
-//Destructuring
-const person = {
-    name3: "Prateek3",
-    age3: 23,
-    isMarried: false
-}
-const person1 = {
-    name4: "Prateek3",
-    age4: 23,
-    isMarried1: true
-}
-
-const {name3, age3, isMarried} = person
-console.log(name3)
-const {name_, age_, isMarried_} = person1
-console.log(name_)
-
-const name5 = "Prateek5"
-const age5 = 10;
-const isMarried2 = true;
-const person2 = {
-//When key value pair has the same name that the variable you are sending you don't have to repeat the variable name again
-    name5,
-    age5,
-    isMarried2,
-}
-console.log(name5)
-console.log(person2.name5)
-
-//Copying Object and changing one value
-const person3 = {
-    ...person2, name5 : "Priyadarshi5",
-}
-console.log(person3.name5)
 
 
 //Arrays
