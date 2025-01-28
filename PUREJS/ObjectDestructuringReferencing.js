@@ -182,3 +182,66 @@ console.log(dobj.greting);
 //Both will be false since js will compare both object's memory address
 console.log({ a: 1 } == { a: 1 });
 console.log({ a: 1 } === { a: 1 });
+
+//================================================
+
+let personObj = {name: "Prateek" }
+const members = [personObj]
+personObj = null
+console.log('memebers: ' + members)
+// personObj.name = null
+// console.log('memebers null: ' + members)
+
+
+//================================================
+
+const value = {number:10}
+
+const multiplyVal = (x = {...value}) => {
+  console.log((x.number *=2 ));
+}
+
+multiplyVal() // Value will be passed as argument original value will not change
+multiplyVal() // Value will be passed as argument original value will not change
+multiplyVal(value) // Value will not be passed as argument it will be passed directly original value change
+multiplyVal(value)  // Value will not be passed as argument it will be passed directly original value change
+
+//================================================
+
+
+function changeAgeandReference(person){
+  person.age = 25
+  person = {
+    name : "John",
+    age: 50
+  }
+
+  return person
+
+}
+
+const personObj1 = {
+  name: "Alex",
+  age: 30
+};
+
+const personObj2 = changeAgeandReference(personObj1);
+
+console.log(personObj1);
+console.log(personObj2);
+
+
+//================================================
+// Deep Copy
+
+let userObj = {
+  name: "Prateek Priyadarshi",
+  age: 26,
+}
+
+// const objClone = Object.assign({}, userObj) // Method 1 Deep Copy
+// const objClone = {...userObj} // Method 2 Deep Copy
+const objClone = JSON.parse(JSON.stringify(userObj)) // Method 3 Deep Copy
+objClone.name = "Lipu"
+
+console.log(userObj, objClone);
