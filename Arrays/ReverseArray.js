@@ -37,34 +37,39 @@ class ReadlineConsole {
     }
   }
 
-  async reverseArray() {//O(n)
-    let arr = this.numbers;
+  // async reverseArray() {//O(n)
+  //   let arr = this.numbers;
 
-    let arr2 = [];
-    for (let i = arr.length - 1; i >= 0; i--) {
-      arr2.push(arr[i]);
-    }
-    console.log("Reversed =====>", arr2);
-  }
-  async reverseArrayOnby2() {//O(n/2)
+  //   let arr2 = [];
+  //   for (let i = arr.length - 1; i >= 0; i--) {
+  //     arr2.push(arr[i]);
+  //   }
+  //   console.log("Reversed =====>", arr2);
+  // }
+
+
+  async reverseArrayOptimize() {
     let arr = this.numbers;
     let start = 0
-    let end = arr.length-1
-    while (start<end) {
-        var temp = arr[start];
-        arr[start] =  arr[end]
-        arr[end] = temp
-        start++;
-        end--;
+    let end = arr.length - 1
+    while(start < end){
+      let temp = arr[start]
+      arr[start] = arr[end]
+      arr[end] = temp
+      start++;
+      end--;
     }
     console.log("Reversed =====>", arr);
   }
+
+
+
 }
 
 (async () => {
   const readConsole = new ReadlineConsole();
   await readConsole.getNumbers();
-  readConsole.showNumbers();
+  // readConsole.showNumbers();
   //readConsole.reverseArray();
-  readConsole.reverseArrayOnby2();
+  readConsole.reverseArrayOptimize();
 })();
