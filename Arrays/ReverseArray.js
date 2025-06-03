@@ -62,8 +62,6 @@ class ReadlineConsole {
     console.log("Reversed =====>", arr);
   }
 
-
-
 }
 
 (async () => {
