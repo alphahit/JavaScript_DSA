@@ -82,3 +82,84 @@ function merge(left, right) {
 
 const array = [8, 15, 23, 2, 3, 5, 44, 56, 1];
 console.log(mergeSort(array));
+
+// Implementation without using array shift and slice methods
+function mergeSortWithoutSliceShift(arr) {
+  // Create a copy of the array to avoid modifying the original
+  const result = [...arr];
+  
+  // Main merge sort function that works with indices
+  function mergeSortHelper(start, end) {
+    // Base case: single element or empty array
+    if (end - start <= 1) {
+      return;
+    }
+    
+    // Calculate middle point
+    const mid = Math.floor((start + end) / 2);
+    
+    // Recursively sort left and right halves
+    mergeSortHelper(start, mid);
+    mergeSortHelper(mid, end);
+    
+    // Merge the sorted halves
+    mergeHelper(start, mid, end);
+  }
+  
+  // Merge function that works with indices
+  function mergeHelper(start, mid, end) {
+    // Create temporary arrays for merging
+    const leftSize = mid - start;
+    const rightSize = end - mid;
+    const leftArr = new Array(leftSize);
+    const rightArr = new Array(rightSize);
+    
+    // Copy elements to temporary arrays
+    for (let i = 0; i < leftSize; i++) {
+      leftArr[i] = result[start + i];
+    }
+    for (let i = 0; i < rightSize; i++) {
+      rightArr[i] = result[mid + i];
+    }
+    
+    // Merge back into the original array
+    let leftIndex = 0;
+    let rightIndex = 0;
+    let currentIndex = start;
+    
+    // Compare and merge elements
+    while (leftIndex < leftSize && rightIndex < rightSize) {
+      if (leftArr[leftIndex] <= rightArr[rightIndex]) {
+        result[currentIndex] = leftArr[leftIndex];
+        leftIndex++;
+      } else {
+        result[currentIndex] = rightArr[rightIndex];
+        rightIndex++;
+      }
+      currentIndex++;
+    }
+    
+    // Copy remaining elements from left array
+    while (leftIndex < leftSize) {
+      result[currentIndex] = leftArr[leftIndex];
+      leftIndex++;
+      currentIndex++;
+    }
+    
+    // Copy remaining elements from right array
+    while (rightIndex < rightSize) {
+      result[currentIndex] = rightArr[rightIndex];
+      rightIndex++;
+      currentIndex++;
+    }
+  }
+  
+  // Start the merge sort process
+  mergeSortHelper(0, arr.length);
+  
+  return result;
+}
+
+// Test with the same array
+const array2 = [8, 15, 23, 2, 3, 5, 44, 56, 1];
+console.log(mergeSortWithoutSliceShift(array2));
