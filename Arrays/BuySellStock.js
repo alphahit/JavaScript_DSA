@@ -46,6 +46,91 @@ function buySellV2(prices) {
 
 
 
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+  
+  
+let totalLength = prices.length
+
+
+    let fp = 0
+    let sp = 1
+    let min = prices[0]
+    let maxprofit = 0
+    while(sp < totalLength){
+        
+        
+  let current = prices[sp]
+   let profit = current - min
+ 
+   
+    if(profit > maxprofit){
+        
+       
+        maxprofit = profit
+    }
+        if(min > current){
+   
+            min = current
+        }
+
+
+        sp++
+    }
+
+
+    return  maxprofit
+
+};
+
+
+var maxProfit = function(prices) {
+   if (prices.length === 0) {
+        return 0;
+    }
+    
+    let i = 0;
+    let j = 1;
+    let maxDifference = 0;
+    let minPrice = prices[0];
+    for(let i = 0; i<prices.length; i++){
+        if(prices[i]<minPrice){
+            minPrice = prices[i];
+        }else if(prices[i]-minPrice>maxDifference){
+            maxDifference = prices[i]-minPrice
+        }
+    }
+
+    return maxDifference
+};
+
+
+
+  // Unoptimized 
+    // let maxProfit = -9999
+    // for(let i = 0; i< prices.length; i++){
+    //     let buy = prices[i]
+    //     let j = i
+    
+    //     while(j < prices.length){
+    //         let profit = prices[j] - buy
+    //         if(profit > maxProfit){
+    //             maxProfit = profit
+    //         }
+    //         j++
+    //     }
+    // }
+
+    // return maxProfit
+
+
+
+
+
+
 
 console.log(buySell(prices))
 console.log(buySell(prices2))
